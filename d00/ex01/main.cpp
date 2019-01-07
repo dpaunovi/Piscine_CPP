@@ -5,19 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/08 11:34:56 by dpaunovi          #+#    #+#             */
-/*   Updated: 2018/06/08 11:36:43 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/07 14:33:17 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/07 17:05:58 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "class/Contact.h"
 #include <iostream>
-#include "Sample1.class.hpp"
-#include "Sample2.class.hpp"
+#include <list>
 
 int		main(void) {
+	std::string input;
+	std::list<Contact> lst;
 
-	Sample1 instance1('a', 42, 4.2f);
-	Sample2 instance2('z', 13, 3.14f);
+	while (1) {
+		std::cout << "Choose your option : " << std::endl;
+		std::cout << "- ADD" << std::endl;
+		std::cout << "- SEARCH" << std::endl;
+		std::cout << "- EXIT" << std::endl;
+		std::cout << "Your chaice: ";
+		std::cin >> input;
+		if (input == "ADD") {
+			std::cout << "add" << std::endl;
+		} else if (input == "SEARCH") {
+			std::cout << "search" << std::endl;
+		} else if (input == "EXIT") {
+			std::cout << "Good bye" << std::endl;
+			break;
+		} else {
+			std::cout << "fail" << std::endl;
+		}
+	}
 
 	return 0;
 }

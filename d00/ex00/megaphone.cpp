@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sample2.class.hpp                                  :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/08 11:20:49 by dpaunovi          #+#    #+#             */
-/*   Updated: 2018/06/08 11:28:36 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/07 11:54:44 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/07 12:25:20 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SAMPLE2_CLASS_H
-# define SAMPLE2_CLASS_H
+#include <iostream>
+#include <string.h>
 
-class Sample2 {
-
-	public:
-
-		char	a1;
-		int		a2;
-		float	a3;
-
-		Sample2(char p1, int p2, float p3);
-		~Sample2(void);
-
-};
-
-#endif
+int		main(int argc, char **argv) {
+	if (argc < 2) {
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	} else {
+		for (int i = 1; i < argc; i++) {
+			for (int j = 0; argv[i][j] != '\0'; j++) {
+				argv[i][j] = toupper(argv[i][j]);
+			}
+			std::cout << argv[i];
+		}
+		std::cout << std::endl;
+	}
+	return 0;
+}
