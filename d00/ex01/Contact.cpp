@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 13:49:19 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/07 15:17:24 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/08 10:44:42 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 #include "Contact.h"
 
 Contact::Contact(void) {
-	std::cout << "New Instance" << std::endl;
 	return;
 }
 
 Contact::~Contact(void) {
-	std::cout << "Delete Instance" << std::endl;
 	return;
 }
 

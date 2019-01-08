@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 13:49:18 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/07 15:18:55 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/08 10:44:24 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ public:
 	std::string get_color(void) const;
 	std::string get_secret(void) const;
 
-	void set_firstname(std::string);
-	void set_lastname(std::string);
-	void set_nickname(std::string);
-	void set_login(std::string);
-	void set_address(std::string);
-	void set_mail(std::string);
-	void set_phone(std::string);
-	void set_birthday(std::string);
-	void set_meal(std::string);
-	void set_color(std::string);
-	void set_secret(std::string);
+	void		set_firstname(std::string);
+	void		set_lastname(std::string);
+	void		set_nickname(std::string);
+	void		set_login(std::string);
+	void		set_address(std::string);
+	void		set_mail(std::string);
+	void		set_phone(std::string);
+	void		set_birthday(std::string);
+	void		set_meal(std::string);
+	void		set_color(std::string);
+	void		set_secret(std::string);
 
 private:
-	
-	std::string _firstname;
+
+	std::string	_firstname;
 	std::string _lastname;
 	std::string _nickname;
 	std::string _login;

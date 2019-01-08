@@ -6,7 +6,7 @@
 #    By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/07 11:48:00 by dpaunovi          #+#    #+#              #
-#    Updated: 2019/01/07 14:42:53 by dpaunovi         ###   ########.fr        #
+#    Updated: 2019/01/08 10:02:35 by dpaunovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME = PhoneBook
 CC = clang++
 FLAG = -Wall -Wextra -Werror
-SRC = parameter.cpp Contact.cpp main.cpp
+SRC = Contact.cpp main.cpp settings.cpp
 OBJ = $(SRC:.cpp=.o)
 
 YELLOW = \033[32m
