@@ -15,8 +15,7 @@
 NAME = PhoneBook
 CC = clang++
 FLAG = -Wall -Wextra -Werror
-CLASS = $(addprefix class/, Contact.cpp)
-SRC = $(CLASS) main.cpp
+SRC = parameter.cpp Contact.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 YELLOW = \033[32m
@@ -26,7 +25,7 @@ RED = \033[31m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo $(SRC)
+	@echo $(OBJ)
 	@$(CC) $(FLAG) -c $(SRC)
 	@$(CC) $^ -o $@
 	@echo "$(YELLOW)$(NAME) created"

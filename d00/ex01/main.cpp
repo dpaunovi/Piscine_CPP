@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "class/Contact.h"
+#include "Contact.h"
+#include "parameter.h"
 #include <iostream>
-#include <list>
 
 int		main(void) {
 	std::string input;
-	std::list<Contact> lst;
+	Contact list;
 
 	while (1) {
 		std::cout << "Choose your option : " << std::endl;
@@ -27,6 +27,8 @@ int		main(void) {
 		std::cin >> input;
 		if (input == "ADD") {
 			std::cout << "add" << std::endl;
+			add_contact(list);
+//			std::cout << list::get_firstname() << std::endl;
 		} else if (input == "SEARCH") {
 			std::cout << "search" << std::endl;
 		} else if (input == "EXIT") {
