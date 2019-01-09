@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 21:03:51 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/08 22:18:29 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/09 15:01:14 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Weapon {
 	public:
 		Weapon(std::string type);
 		~Weapon(void);
-		std::string const	&get_type(void);
-		void				set_type(std::string type);
+		std::string const	&getType(void);
+		void				setType(std::string type);
 	private:
 		std::string			_type;
 };

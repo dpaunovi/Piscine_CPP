@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 21:26:34 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/08 21:49:02 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/09 15:31:21 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 
 class HumanB {
 	public:
-		HumanB(void);
+		HumanB(std::string name);
 		~HumanB(void);
 
 		void				attack();
+		void				setWeapon(Weapon &weapon);
 	private:
-		Weapon				_weapon;
+		Weapon				*_weapon;
 		std::string const	_name;
 };
 
