@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:29:04 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/09 18:40:45 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/10 11:56:47 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ Fixed::~Fixed(void) {
 	return;
 }
 
-float	Fixed::toFloat(void) const {
+float		Fixed::toFloat(void) const {
 	float	n;
 
 	n = getRawBits();
 	return (n / (1 << this->_bits));	
 }
 
-int		Fixed::toInt(void) const {
-	return (getRawBits() >> this->_bits);
+int			Fixed::toInt(void) const {
+	return (this->_raw >> this->_bits);
 }
 
 void		Fixed::setRawBits(int const raw) {
@@ -64,7 +64,7 @@ int 		Fixed::getRawBits(void) const {
 	return this->_raw;
 }
 
-Fixed	&Fixed::operator=(Fixed const &rhs) {
+Fixed		&Fixed::operator=(Fixed const &rhs) {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs) {
 		this->_raw = rhs.getRawBits();
@@ -72,7 +72,7 @@ Fixed	&Fixed::operator=(Fixed const &rhs) {
 	return *this;
 }
 
-std::ostream &	operator<<(std::ostream & o, Fixed const & rhs)
+std::ostream &operator<<(std::ostream &o, Fixed const &rhs)
 {
 	o << rhs.toFloat();
 	return o;

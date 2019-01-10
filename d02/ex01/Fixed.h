@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:29:14 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/09 18:27:19 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/10 11:57:07 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Fixed {
 		Fixed(void);
 		Fixed(int const value);
 		Fixed(float const value);
-		Fixed(Fixed const & src);
+		Fixed(Fixed const &src);
 		~Fixed(void);
 
 		Fixed		&operator=(Fixed const &rhs);
