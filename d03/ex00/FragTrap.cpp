@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:04:48 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/11 12:33:16 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/11 14:40:24 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ FragTrap::~FragTrap(void) {
 FragTrap	&FragTrap::operator=(FragTrap const &rhs) {
 	if (this != &rhs) {
 		this->_name = rhs._name;
+		this->_class = rhs._class;
+		this->_hp = rhs._hp;
 		this->_max_hp = rhs._max_hp;
 		this->_ep = rhs._ep;
 		this->_max_ep = rhs._max_ep;
