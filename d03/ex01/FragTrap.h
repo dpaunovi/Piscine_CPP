@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:04:54 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/11 13:22:29 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/11 15:26:05 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ class FragTrap {
 
 	public:
 
+		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(FragTrap const &src);
 		~FragTrap(void);
 
 		FragTrap			&operator=(FragTrap const &rhs);
 
+		void				init(std::string name);
 		std::string			getName(void) const;
 		int					rangedAttack(std::string const &target);
 		int					meleeAttack(std::string const &target);

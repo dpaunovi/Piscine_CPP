@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:14:21 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/11 14:19:54 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/11 16:01:50 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		main(void) {
 	p2.beRepaired(1);
 	std::cout << std::endl;
 
-	std::cout << "=============== random attack ===============" << std::endl;
+	std::cout << "=============== challenge ===============" << std::endl;
 	p2.challengeNewcomer(p1.getName());
 	std::cout << std::endl;
 	p2.challengeNewcomer(p1.getName());
@@ -49,7 +49,7 @@ int		main(void) {
 	p2.challengeNewcomer(p1.getName());
 	std::cout << std::endl;
 
-	std::cout << "=============== challenge ===============" << std::endl;
+	std::cout << "=============== random attack ===============" << std::endl;
 	p2.takeDamage(p1.vaulthunter_dot_exe(p2.getName()));
 	std::cout << std::endl;
 

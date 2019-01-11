@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:04:54 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/11 13:40:38 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/11 15:26:44 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ class ScavTrap {
 
 	public:
 
+		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const &src);
 		~ScavTrap(void);
 
 		ScavTrap			&operator=(ScavTrap const &rhs);
 
+		void				init(std::string name);
 		std::string			getName(void) const;
 		int					rangedAttack(std::string const &target);
 		int					meleeAttack(std::string const &target);

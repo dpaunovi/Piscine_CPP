@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:04:48 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/11 14:39:44 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/11 15:59:45 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 #include <iostream>
 #include <cstdlib>
 
-FragTrap::FragTrap(std::string name) : _name(name) {
-	this->_class = "FR4G-TP";
-	this->_hp = 100;
-	this->_max_hp = 100;
-	this->_ep = 100;
-	this->_max_ep = 100;
-	this->_level = 1;
-	this->_melee_atk_dmg = 30;
-	this->_ranged_atk_dmg = 20;
-	this->_armor_reduc_dmg = 5;
+FragTrap::FragTrap(void) {
+	this->init("Unknown");
+	std::cout << "[" << this->_class << "] - " << this->_name;
+	std::cout << " has been created" << std::endl;
+	return;
+}
+
+FragTrap::FragTrap(std::string name) {
+	this->init(name);
 	std::cout << "[" << this->_class << "] - " << this->_name;
 	std::cout << " has been created" << std::endl;
 	return;
@@ -57,6 +56,20 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs) {
 		this->_armor_reduc_dmg = rhs._armor_reduc_dmg;
 	}
 	return *this;
+}
+void		FragTrap::init(std::string name) {
+	this->_name = name;
+	this->_class = "FR4G-TP";
+	this->_hp = 100;
+	this->_max_hp = 100;
+	this->_ep = 100;
+	this->_max_ep = 100;
+	this->_level = 1;
+	this->_melee_atk_dmg = 30;
+	this->_ranged_atk_dmg = 20;
+	this->_armor_reduc_dmg = 5;
+
+	return;
 }
 
 std::string	FragTrap::getName(void) const {
@@ -122,7 +135,7 @@ void		FragTrap::takeDamage(unsigned int amount) {
 }
 
 void		FragTrap::beRepaired(unsigned int amount) {
-	if ((amount + this->_hp) > this->_max_hp) {
+	if ((amount + (unsigned int)this->_hp) > (unsigned int)this->_max_hp) {
 		this->_hp = 100;
 	} else {
 		this->_hp += amount;
