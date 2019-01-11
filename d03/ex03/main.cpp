@@ -1,0 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/10 18:14:21 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/11 18:40:00 by dpaunovi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include "ScavTrap.h"
+#include "NinjaTrap.h"
+#include "FragTrap.h"
+
+int		main(void) {
+	FragTrap	p1("Greg");
+	ScavTrap	p2("Florian");
+	NinjaTrap	p3("Dragan");
+	ClapTrap	p4("Clapipou");
+	ClapTrap	p5;
+
+	srand(time(NULL));
+
+	std::cout << "=============== ranged attack ===============" << std::endl;
+	p2.takeDamage(p1.rangedAttack(p2.getName()));
+	std::cout << std::endl;
+	p1.takeDamage(p2.rangedAttack(p1.getName()));
+	std::cout << std::endl;
+
+	std::cout << "=============== melee attack ===============" << std::endl;
+	p2.takeDamage(p1.meleeAttack(p2.getName()));
+	std::cout << std::endl;
+	p1.takeDamage(p2.meleeAttack(p1.getName()));
+	std::cout << std::endl;
+
+	std::cout << "=============== repaired robots ===============" << std::endl;
+	p1.beRepaired(70);
+	std::cout << std::endl;
+	p2.beRepaired(1);
+	std::cout << std::endl;
+
+	std::cout << "=============== random attack ===============" << std::endl;
+	p2.challengeNewcomer(p1.getName());
+	std::cout << std::endl;
+
+	std::cout << "=============== challenge ===============" << std::endl;
+	p2.takeDamage(p1.vaulthunter_dot_exe(p2.getName()));
+	std::cout << std::endl;
+
+	std::cout << "=============== ninja shoebox ===============" << std::endl;
+	p3.ninjaShoebox(p2.getName());
+	std::cout << std::endl;
+
+	std::cout << "=============== End of battle ===============" << std::endl;
+
+	return 0;
+}
