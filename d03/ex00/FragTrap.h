@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:04:54 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/10 18:26:17 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/11 11:26:31 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class FragTrap {
 		int					meleeAttack(std::string const &target);
 		void				takeDamage(unsigned int amount);
 		void				beRepaired(unsigned int amount);
-//		void				vaulthunter_dot_exe(std::string const &target);
+		int					vaulthunter_dot_exe(std::string const &target);
 
 	private:
 		std::string	_name;
