@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Obstacle.hpp                                       :+:      :+:    :+:   */
+/*   ft_retro.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/12 12:13:06 by sflinois          #+#    #+#             */
-/*   Updated: 2019/01/13 11:54:25 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/13 12:27:32 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/13 12:31:21 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OBSTACLE_HPP
-#define OBSTACLE_HPP
+#include "ft_retro.hpp"
 
-#include "AGameEntity.hpp"
-
-class Obstacle : public AGameEntity{
-    public: 
-        Obstacle();
-        Obstacle(CVector v, char c);
-        Obstacle(Obstacle const &src); 
-        virtual ~Obstacle(); 
-
-        Obstacle	&operator=(Obstacle const &rhs);
-
-		virtual void	updateEntity(int input);
-    private:
-};
-
-#endif
+bool	isAvailable(clock_t last, int speed) {
+	if ((double(clock() - last) / (CLOCKS_PER_SEC / speed)) > 1)
+		return (true);
+	else
+		return(false);
+}

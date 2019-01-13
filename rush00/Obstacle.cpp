@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Obstacle.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/12 10:50:54 by sflinois          #+#    #+#             */
-/*   Updated: 2019/01/13 19:13:42 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/13 11:06:16 by sflinois          #+#    #+#             */
+/*   Updated: 2019/01/13 11:54:27 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ncurses.h>
-#include "GameManager.hpp"
-#include "Player.hpp"
-#include "Enemy.hpp"
-#include "Missile.hpp"
 #include "Obstacle.hpp"
-#include "ft_retro.hpp"
+#include <iostream>
 
-int		main()
-{
-	GameManager		gm(CVector(WIN_X, WIN_Y), HUD);
-	clock_t			last;
+Obstacle::Obstacle() {
+}
 
-	while ((gm.setInput(wgetch(gm.getWin()))) != 27)
-	{
-		last = clock();
-		gm.updateMap();
-		while (!(isAvailable(last, 60)));
+Obstacle::Obstacle(CVector v, char c) : AGameEntity(v,c,TOBST){
+}
+
+Obstacle::Obstacle(Obstacle const &src){
+	*this = src;
+}
+
+Obstacle::~Obstacle(){
+}
+
+Obstacle		& Obstacle::operator=(Obstacle const &rhs){
+	AGameEntity::operator=(rhs);
+	return (*this);
+}
+
+
+void	Obstacle::updateEntity(int input){
+	if (this->isOutOfBound()){
+		this->deleteEntity(*this);
+		return ;
 	}
-	return 0;
+	input = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:29:43 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/12 23:49:58 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/13 16:50:51 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Player : public AGameEntity {
 		Player(void);
 		Player(CVector v, char c);
 		Player(Player const &src); 
-		~Player(void); 
+		virtual ~Player(void); 
 
 		Player	&operator=(Player const &rhs);
 

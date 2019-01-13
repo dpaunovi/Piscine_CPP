@@ -6,7 +6,7 @@
 /*   By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:14:21 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/11 19:39:12 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/11 18:40:00 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,9 @@ int		main(void) {
 	std::cout << std::endl;
 
 	std::cout << "=============== ninja shoebox ===============" << std::endl;
-	p3.ninjaShoebox(p2);
+	p3.ninjaShoebox(p2.getName());
 	std::cout << std::endl;
 
-	p3.takeDamage(p3.meleeAttack(p3.getName()));
 	std::cout << "=============== End of battle ===============" << std::endl;
 
 	return 0;
