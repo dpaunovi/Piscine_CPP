@@ -6,62 +6,61 @@
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 08:17:21 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/16 09:27:39 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/16 11:55:37 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include "Base.hpp"
 
-class Base { public: virtual ~Base() {} };
-class A: public Base {};
-class B: public Base {};
-class C: public Base {};
-
-Base * generate(void)
+Base	*generate(void)
 {
-	int	choice = rand() % 3;
-	if (choice == 0)
+	int	random = rand() % 3;
+	if (random == 0)
 	{
-		std::cout << "Generated A" << std::endl;
-		return reinterpret_cast<Base*>(new A);
+		std::cout << "New A" << std::endl;
+		return (new A());
 	}
-	else if (choice == 1)
+	else if (random == 1)
 	{
-		std::cout << "Generated B" << std::endl;
-		return reinterpret_cast<Base*>(new B);
+		std::cout << "New B" << std::endl;
+		return (new B());
 	}
 	else
 	{
-		std::cout << "Generated C" << std::endl;
-		return reinterpret_cast<Base*>(new C);
+		std::cout << "New C" << std::endl;
+		return (new C());
 	}
 }
 
-void identify_from_pointer( Base * p )
+void	identify_from_pointer( Base * p )
 {
 	if (dynamic_cast<A*>(p))
-		std::cout << "It's an A pointer!" << std::endl;
+		std::cout << "A pointer!" << std::endl;
 	else if (dynamic_cast<B*>(p))
-		std::cout << "It's an B pointer!" << std::endl;
+		std::cout << "B pointer!" << std::endl;
 	else if (dynamic_cast<C*>(p))
-		std::cout << "It's an C pointer!" << std::endl;
+		std::cout << "C pointer!" << std::endl;
 	else
-		std::cout << "Unknown child pointer of Base" << std::endl;
+		std::cout << "Unknown pointer" << std::endl;
 }
 
-void identify_from_reference( Base & p )
+void	identify_from_reference( Base & p )
 {
 	if (dynamic_cast<A*>(&p))
-		std::cout << "It's an A reference!" << std::endl;
+		std::cout << "A reference!" << std::endl;
 	else if (dynamic_cast<B*>(&p))
-		std::cout << "It's an B reference!" << std::endl;
+		std::cout << "B reference!" << std::endl;
 	else if (dynamic_cast<C*>(&p))
-		std::cout << "It's an C reference!" << std::endl;
+		std::cout << "C reference!" << std::endl;
 	else
-		std::cout << "Unknown child reference of Base" << std::endl;
+		std::cout << "Unknown reference" << std::endl;
 }
 
-int	main( void )
+int		main( void )
 {
 	srand(clock());
 
@@ -69,4 +68,6 @@ int	main( void )
 	identify_from_pointer(base);
 	base = generate();
 	identify_from_reference(*base);
+
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:19:56 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/16 09:21:08 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/16 10:48:39 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,19 +91,19 @@ void	printDouble(double value, int precision) {
 	std::cout << "double: " << std::setprecision(precision) <<  std::fixed << value << std::endl;
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
 	double value;
 	int precision;
-	for (int i = 1; i < ac; ++i) {
-		precision = getPrecision(av[i]);
-		if (strlen(av[i]) == 1
-			&& av[i][0] >= 32 && av[i][0] <= 126
-			&& av[i][0] < '0' && av[i][0] > '9') {
-			value = av[i][0];
+	for (int i = 1; i < argc; ++i) {
+		precision = getPrecision(argv[i]);
+		if (strlen(argv[i]) == 1
+			&& argv[i][0] >= 32 && argv[i][0] <= 126
+			&& argv[i][0] < '0' && argv[i][0] > '9') {
+			value = argv[i][0];
 		}
 		else {
-			value = atof(av[i]);
+			value = atof(argv[i]);
 		}
 		printChar(value);
 		printInt(value);

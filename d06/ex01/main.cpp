@@ -6,25 +6,15 @@
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 19:03:01 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/16 09:23:24 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/16 12:19:00 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
-struct	Data {
-	std::string s1;
-	int n;
-	std::string s2;
-};
-
-struct	SerializedData {
-	char s1[9];
-	int n;
-	char s2[9];
-};
+#include "SerializedData.hpp"
+#include "Data.hpp"
 
 void	*serialize(void) {
 	SerializedData *randomData = new SerializedData;
@@ -49,7 +39,7 @@ Data *deserialize(void *raw) {
 }
 
 int	main(void) {
-	srand(time(0));
+	srand(time(NULL));
 	void *data_p = serialize();
 	Data *data = deserialize(data_p);
 	std::cout << data->s1 << std::endl;
