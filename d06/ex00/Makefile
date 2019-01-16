@@ -12,10 +12,10 @@
 
 .PHONY: all, clean, fclean, re
 
-NAME = megaphone
+NAME = convert
 CC = clang++
 FLAG = -Wall -Wextra -Werror
-SRC = conversion.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 YELLOW = \033[32m
