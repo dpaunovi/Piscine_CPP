@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                 :+:      :+:    :+:   */
+/*   whatever.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/16 11:05:20 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/16 11:21:36 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/17 13:04:18 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/17 13:13:05 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
-
 #include <iostream>
 
-struct Data {
-    public: 
-        Data();
-        Data(Data const &src);
-        ~Data();
+template<typename T>
+void    swap(T &v1, T &v2) {
+    T tmp = v1;
+    v1 = v2;
+    v2 = tmp;
+}
 
-        Data	&operator=(Data const &rhs);
+template<typename T>
+T       min(T &v1, T &v2) {
+    return ((v1 < v2) ? v1 : v2);
+}
 
-        std::string     s1;
-        int             n;
-        std::string     s2;
+template<typename T>
+T       max(T &v1, T &v2) {
+    return ((v1 > v2) ? v1 : v2);    
+}
 
-    private:
-};
+int     main(void) {
 
-#endif
+}
