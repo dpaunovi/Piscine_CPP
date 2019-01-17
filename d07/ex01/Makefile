@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dpaunovi <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/07 11:48:00 by dpaunovi          #+#    #+#              #
-#    Updated: 2019/01/17 14:02:10 by dpaunovi         ###   ########.fr        #
+#    Updated: 2019/01/17 14:15:50 by dpaunovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
-NAME = whatever
+NAME = iter
 CC = clang++
 FLAG = -Wall -Wextra -Werror
-SRC = whatever.cpp
+SRC = iter.cpp
 OBJ = $(SRC:.cpp=.o)
 
 YELLOW = \033[32m
