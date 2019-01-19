@@ -6,7 +6,7 @@
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 12:29:37 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/18 17:40:21 by dpaunovi         ###   ########.fr       */
+/*   Updated: 2019/01/18 22:05:30 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,16 @@ void    Span::addNumber(int n) {
 }
 
 int     Span::shortestSpan(void) {
+	int		min = -1;
     if (this->_lst.size() > 1) {
-        return *(++this->_lst.begin()) - *this->_lst.begin();
+		for (std::multiset<int>::iterator it = this->_lst.begin(); std::next(it, 1) != this->_lst.end(); ++it) {
+			if ((*std::next(it, 1) - *(it)) < min || min == -1) {
+				min = *std::next(it, 1) - *(it);
+            } else if (min == 0) {
+                return min;
+            }
+    	}
+        return min;
     } else {
         throw std::logic_error("Size of list is too small.");
     }
