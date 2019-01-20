@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Hostname.hpp                                       :+:      :+:    :+:   */
+/*   GraphUI.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/19 16:09:01 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/19 19:51:54 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/20 18:10:40 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/20 23:13:11 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HOSTNAME_HPP
-#define HOSTNAME_HPP
+#ifndef GRAPHUI_HPP
+#define GRAPHUI_HPP
 
-#include "AMonitorModule.hpp"
-#include <iostream>
-
-class Hostname : public AMonitorModule<std::string> {
+class GraphUI {
     public: 
-        Hostname();
-        ~Hostname();
+        GraphUI();
+        ~GraphUI(); 
 
-        void        update(void);
-        std::string getData(void);
+        void    display();
 
-        Hostname	&operator=(Hostname const &rhs);
+        GraphUI	&operator=(GraphUI const &rhs);
 
     private:
-        std::string _data;
-        Hostname(Hostname const &src);
-
+        GraphUI(GraphUI const &src); 
 };
 
 #endif

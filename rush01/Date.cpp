@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Hostname.hpp                                       :+:      :+:    :+:   */
+/*   Date.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/19 16:09:01 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/19 19:51:54 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/19 22:17:27 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/20 13:09:17 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HOSTNAME_HPP
-#define HOSTNAME_HPP
-
-#include "AMonitorModule.hpp"
+#include "Date.hpp"
+#include <unistd.h>
 #include <iostream>
 
-class Hostname : public AMonitorModule<std::string> {
-    public: 
-        Hostname();
-        ~Hostname();
+Date::Date() {
+    AMonitorModule<time_t>::_name = "Date";
+}
 
-        void        update(void);
-        std::string getData(void);
+Date::~Date() {
+}
 
-        Hostname	&operator=(Hostname const &rhs);
+time_t  Date::getData(void) {
+    return this->_data;
+}
 
-    private:
-        std::string _data;
-        Hostname(Hostname const &src);
+void        Date::update(void) {
+    time_t      my_time = time(NULL);
+    this->_data = my_time;
+}
 
-};
-
-#endif
+Date    &Date::operator=(Date const &rhs)
+{
+    this->_data = rhs._data;
+    return *this;
+}

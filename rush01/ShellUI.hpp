@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RAM.hpp                                            :+:      :+:    :+:   */
+/*   ShellUI.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/19 16:08:32 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/19 16:08:34 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/20 17:19:48 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/20 19:54:46 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RAM_HPP
-#define RAM_HPP
+#ifndef SHELLUI_HPP
+#define SHELLUI_HPP
 
-class RAM {
+#include "Manager.hpp"
+#include <ncurses.h>
+
+class ShellUI {
     public: 
-        RAM();
-        RAM(RAM const &src); 
-        ~RAM(); 
+        ShellUI();
+        ~ShellUI();
 
-        RAM	&operator=(RAM const &rhs);
+        void    init(void);
+        void    printName(std::string name);
+        void    printShell();
+        void    display();
+
+        ShellUI	&operator=(ShellUI const &rhs);
 
     private:
+        ShellUI(ShellUI const &src);
 };
 
 #endif

@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Hostname.hpp                                       :+:      :+:    :+:   */
+/*   Network.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/19 16:09:01 by dpaunovi          #+#    #+#             */
-/*   Updated: 2019/01/19 19:51:54 by dpaunovi         ###   ########.fr       */
+/*   Created: 2019/01/20 21:32:02 by dpaunovi          #+#    #+#             */
+/*   Updated: 2019/01/20 21:40:49 by dpaunovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HOSTNAME_HPP
-#define HOSTNAME_HPP
+#ifndef NETWORK_HPP
+#define NETWORK_HPP
 
 #include "AMonitorModule.hpp"
 #include <iostream>
+#include <array>
 
-class Hostname : public AMonitorModule<std::string> {
+class Network : public AMonitorModule<std::string> {
     public: 
-        Hostname();
-        ~Hostname();
+        Network();
+        Network(Network const &src); 
+        ~Network(); 
 
-        void        update(void);
+        void        update();
         std::string getData(void);
+        std::string execCmd(const char *cmd);
 
-        Hostname	&operator=(Hostname const &rhs);
+        Network	&operator=(Network const &rhs);
 
     private:
         std::string _data;
-        Hostname(Hostname const &src);
-
 };
 
 #endif

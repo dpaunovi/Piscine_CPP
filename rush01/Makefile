@@ -5,41 +5,49 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dpaunovi <dpaunovi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/01/07 10:40:24 by sflinois          #+#    #+#              #
-#    Updated: 2019/01/19 12:22:42 by dpaunovi         ###   ########.fr        #
+#    Created: 2019/01/07 11:48:00 by dpaunovi          #+#    #+#              #
+#    Updated: 2019/01/20 23:13:07 by dpaunovi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+.PHONY: all, clean, fclean, re
+
 NAME = ft_gkrellm
-
-SRC_PATH = ./
-SRC_NAME = main.cpp
-OBJ_PATH = objs
-
 CC = clang++
-CC_FLAGS = -Wall -Werror -Wextra
+FLAG = -Wall -Wextra -Werror
+SRC = 	main.cpp \
+		Hostname.cpp \
+		Username.cpp \
+		Manager.cpp \
+		Date.cpp \
+		OSinfo.cpp \
+		CPUinfo.cpp \
+		RAMinfo.cpp \
+		Network.cpp \
+		ShellUI.cpp \
+		GraphUI.cpp \
 
-OBJ_NAME = $(SRC_NAME:.cpp=.o)
+OBJ = $(SRC:.cpp=.o)
 
-SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
-OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+YELLOW = \033[32m
+CYAN = \033[36m
+RED = \033[31m
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		@$(CC) -o $@ $(OBJ) -lncurses
-
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
-		@mkdir $(OBJ_PATH) 2>/dev/null || true
-		@$(CC) $(CC_FLAGS) -o $@ -c $<
+	@$(CC) $(FLAG) -c $(SRC)
+	@$(CC) $^ -o $@ -lncurses
+	@echo "$(YELLOW)$(NAME) created"
+	@rm -f $(OBJ)
+	@echo "$(CYAN)Files .o deleted"
 
 clean:
-		@rm -fv $(OBJ)
-		@rmdir $(OBJ_PATH) 2>/dev/null || true
+	@rm -f $(OBJ)
+	@echo "$(CYAN)Files .o deleted"
 
 fclean: clean
-		@rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(RED)$(NAME) deleted"
 
 re: fclean all
-
-.PHONY: all clean fclean re
